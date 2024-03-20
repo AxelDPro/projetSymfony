@@ -2,6 +2,7 @@
 
 use App\Kernel;
 
+<link rel="stylesheet" href="css/bootstrap.css">
 require_once dirname(__DIR__).'/vendor/autoload_runtime.php';
 
 return function (array $context) {
