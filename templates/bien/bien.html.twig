@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BienController{% endblock %}
+
+{% block body %}
+{# ici tout le body contenu dans la page d'Accueil #}
+{% block titre%}
+
+<h1> Liste des Biens </h1>
+{% endblock %}
+
+{%for bien in produits %}
+
+<tr>
+
+<td><img src="{{asset('images/'~ bien.image ~'')}}" style="width:100px;height:100px;"> </td>
+
+</br>
+</br>
+
+<h3> Nom </h3>
+{{produit.nomProduit}}
+
+<h3> Description </h3>
+<td>{{produit.description}}</td>
+
+<h3> Prix </h3>
+<td>{{produit.prix}}</td>
+</tr>
+
+{% endfor %}
+{% endblock %}
