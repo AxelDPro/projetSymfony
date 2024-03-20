@@ -7,9 +7,10 @@
 {% block titre%}
 
 <h1> Liste des Biens </h1>
+
 {% endblock %}
 
-{%for bien in produits %}
+{%for bien in biens %}
 
 <tr>
 
@@ -19,13 +20,13 @@
 </br>
 
 <h3> Nom </h3>
-{{produit.nomProduit}}
+{{bien.nomBien}}
 
 <h3> Description </h3>
-<td>{{produit.description}}</td>
+<td>{{bien.description}}</td>
 
 <h3> Prix </h3>
-<td>{{produit.prix}}</td>
+<td>{{bien.prix}}</td>
 </tr>
 
 {% endfor %}
