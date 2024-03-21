@@ -3,9 +3,9 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use App\Repository\BienRepository;
+use Symfony\Component\HttpFoundation\Response;
 
 class BienController extends AbstractController
 {
@@ -18,3 +18,5 @@ class BienController extends AbstractController
         ]);
     }
 }
+
+?>
