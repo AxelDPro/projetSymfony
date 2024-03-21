@@ -9,24 +9,23 @@
 <h1> Liste des Biens </h1>
 {% endblock %}
 
-{%for bien in produits %}
+{%for bien in biens %}
 
 <tr>
-
-<td><img src="{{asset('images/'~ bien.image ~'')}}" style="width:100px;height:100px;"> </td>
-
-</br>
+<td> <img src="{{asset('images/'~ bien.image ~'')}}" style="width:100px;height:100px;"> </td>     
 </br>
 
-<h3> Nom </h3>
-{{bien.nomBien}}
+<p> {{bien.nbPieces}} pièces  - {{bien.surface}}m2  </p>
+{{bien.titre}} </br>
 
-<h3> Description </h3>
-<td>{{bien.description}}</td>
+<p> {{bien.ville}} ({{bien.cp}}) </p>
 
-<h3> Prix </h3>
-<td>{{bien.prix}}</td>
+<p> <td>{{bien.prix}}</td> € </p>
 </tr>
+
+
+
+
 
 {% endfor %}
 {% endblock %}
