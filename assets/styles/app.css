@@ -1,3 +1,4 @@
+/**BODY**/
 body {
     background: -moz-linear-gradient(45deg, #070707 0%, #b5babb 29%, #19191a 66%, #d3d0ce 100%);
     background: -webkit-linear-gradient(45deg, #484949 0%,#19191a 29%,#ccc8cc 66%,#111111 100%);
@@ -108,6 +109,14 @@ body::after {
   .st15{opacity:0.3;fill:#FFFFFF;enable-background:new    ;}
 
   h1{
-
     color: #FFFFFF;
+  }
+
+  /**ACCUEIL**/
+
+  /**WIDGET**/
+  #widget img {
+    justify-content: center;
+    width: 1200x;
+    height: 500px;
   }
