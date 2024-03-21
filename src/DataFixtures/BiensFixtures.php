@@ -92,11 +92,5 @@ class BiensFixtures extends Fixture
         $manager->flush();
 
 
-
-
-
-
-
-
     }
 }
