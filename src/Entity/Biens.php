@@ -6,8 +6,7 @@ use App\Repository\BiensRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: BiensRepository::class)]
-class Biens
-{
+class Biens {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
