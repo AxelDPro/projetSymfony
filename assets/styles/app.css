@@ -1,0 +1,62 @@
+body {
+	background: linear-gradient(-45deg, #000000, #373435, #5e676a, #aab0af);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/**ACCUEIL**/
+
+.carousel-item img {
+    max-height: 40vh; /* Adjust this value as needed */
+    object-fit: cover; /* This will help to keep the aspect ratio of the images */
+}
+
+#accueil p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #ffffff;
+    text-align: center;
+}
+
+#accueil h1 {
+    color: #ffffff;
+}
+
+#accueil h2 {
+    font-size: 28px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#accueil h4 {
+    color: #000000;
+}
+
+#accueil ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+#accueil li {
+    margin-bottom: 10px;
+    text-align: center;
+    color: #ffffff;
+}
+
+
