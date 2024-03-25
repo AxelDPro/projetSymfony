@@ -3,13 +3,29 @@
 {% block title %}{% endblock %}
 
 {% block body %}
+{% block style %}
+<style>
+
+</style>
+{% endblock %}
+
+<body>
 
 
+    <div class="example-wrapper">
+        <h1>Mon Agence Immobilière</h1>
+    </div>
 
-<div class="example-wrapper">
-    <h1>Mon agence immobilière</h1>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('{{ asset('images/image2.jpg') }}'); /* Remplacez 'background.jpg' par le chemin de votre image */
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</body>
 
-   
-    
-</div>
 {% endblock %}
