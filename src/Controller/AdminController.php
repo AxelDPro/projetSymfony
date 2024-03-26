@@ -11,6 +11,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use App\Form\BiensType;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Biens;
+use Doctrine\DBAL\Platforms\MariaDb1060Platform;
 
 
 
@@ -45,22 +46,30 @@ class AdminController extends AbstractController
     }
 
 
-    #[Route('/ajoutProduit', name: 'admin_produit_ajouter')]
-    public function ajouterProduit(Request $request, EntityManagerInterface $manager): Response {
-        $produit = new Biens;
+    #[Route('/ajoutBiens', name: 'admin_biens_ajouter')]
+    public function ajouterBiens(Request $request, EntityManagerInterface $manager): Response {
+        $biens = new Biens;
 
-        $form = $this->createForm(BiensType::class, $produit);
+        $form = $this->createForm(BiensType::class, $biens);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $manager->persist($produit);
+            $manager->persist($biens);
             $manager->flush();
             
-            return $this->redirectToRoute('app_adminProduits');
+            return $this->redirectToRoute('app_adminBiens');
         }
-        return $this->render('admin/ajouterProduit.html.twig', [ 
-            'produit'=> $produit,
+        return $this->render('admin/ajouterBiens.html.twig', [ 
+            'biens'=> $biens,
             'form' => $form->createView()
         ]);
+    }
+
+    #[Route('/adminDelete/{id}', name: 'admin_biens_delete')]
+    public function deleteBiens(Biens $biens, BiensRepository $biensRepository, Request $request, EntityManagerInterface $manager): Response {
+        $manager->remove($biens);
+        $manager->flush();
+        $this->addFlash('success','Suppression correctement effectuer !');
+        return $this->redirectToRoute("app_adminBiens");
     }
 }
