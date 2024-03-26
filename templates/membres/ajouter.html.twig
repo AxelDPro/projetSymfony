@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminController!{% endblock %}
+{% block title %}Hello MembresController!{% endblock %}
 
 {% block body %}
 <style>
@@ -8,11 +8,10 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
+<h1>Page des Membres</h1>
 
-<h1>Page d'Administration</h1>
 
-
-</br></br> <a href="{{path('admin_biens_ajouter')}}"> <button type="button" class="btn btn-success">Ajouter</button></br></br><table class="table table-striped"><thead><tr>
+</br></br> <a href="{{path('membres_biens_ajouter')}}"> <button type="button" class="btn btn-success">Ajouter</button></br></br><table class="table table-striped"><thead><tr>
 <th>Titre</th>
 <th>Description</th>
 <th>Surface</th>
@@ -45,14 +44,14 @@
 
 	<td>
 		 <form>
-			<a href="{{path('admin_biens_modification',{'id':biens.id})}}"><button type="button" class="btn btn-primary">Modifier</button>
+			<a href="{{path('membres_biens_modification',{'id':biens.id})}}"><button type="button" class="btn btn-primary">Modifier</button>
 			</a>
 		 </form>   
 	</td>
 
 	<td>
 		  <form>
-			<a href="{{path('admin_biens_delete',{'id':biens.id})}}">
+			<a href="{{path('membres_biens_delete',{'id':biens.id})}}">
 			<button type="button" class="btn btn-primary">Supprimer</button>
 			</a>
 		 </form>   

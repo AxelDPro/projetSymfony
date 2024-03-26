@@ -13,16 +13,16 @@ class SecurityController extends AbstractController
     public function index(): Response
     {
         return $this->render('security/index.html.twig', [
-            'controller_name' => 'SecurityController',
+            'security' => 'SecurityController',
         ]);
     }
 
     #[Route(path: '/connexion', name: 'app_connexion')]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
-        // if ($this->getUser()) {
-        //     return $this->redirectToRoute('target_path');
-        // }
+         if ($this->getUser()) {
+             return $this->redirectToRoute('target_path');
+         }
 
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
