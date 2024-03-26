@@ -4,8 +4,12 @@ namespace App\Entity;
 
 use App\Repository\BiensRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: BiensRepository::class)]
+#[Vich\Uploadable]
 class Biens {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -47,6 +51,11 @@ class Biens {
 
     #[ORM\Column(length: 300)]
     private ?string $image = null;
+    #[Vich\UploadableField(mapping: 'biens_image', fileNameProperty: 'image')]
+    private ?File $imageFile = null;
+
+    #[ORM\Column]
+    private ?\DateTimeImmutable $createdAt = null;
 
     public function getId(): ?int
     {
@@ -197,9 +206,35 @@ class Biens {
         return $this->image;
     }
 
-    public function setImage(string $image): static
+    public function setImage(?string $image): static
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    
+    public function getImageFile(): ?string
+    {
+        return $this->imageFile;
+    }
+
+    public function setImageFile(?File $imageFile = null): self
+    {
+        $this->imageFile = $imageFile;
+
+        return $this;
+    }
+
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeImmutable $createdAt): static
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }
