@@ -3,18 +3,41 @@
 {% block title %}Hello ContactController!{% endblock %}
 
 {% block body %}
+
+
+
+
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('{{ asset('images/contact.jpg') }}'); /* Remplacez 'background.jpg' par le chemin de votre image */
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</body>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/wamp64/www/Projet Immo/projetSymfony/src/Controller/ContactController.php</code></li>
-        <li>Your template at <code>C:/wamp64/www/Projet Immo/projetSymfony/templates/contact/index.html.twig</code></li>
-    </ul>
-</div>
+<form action="#" method="post">
+    <label for="nom">Nom contact :</label><br>
+    <input type="text" id="nom" name="nom"><br><br>
+    
+    <label for="prenom">Prénom contact :</label><br>
+    <input type="text" id="prenom" name="prenom"><br><br>
+    
+    <label for="email">Email :</label><br>
+    <input type="email" id="email" name="email"><br><br>
+    
+    <label for="sujet">Sujet :</label><br>
+    <input type="text" id="sujet" name="sujet"><br><br>
+    
+    <label for="message">Message :</label><br>
+    <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+    
+    <input type="submit" value="Envoyer">
+</form>
+
+
 {% endblock %}

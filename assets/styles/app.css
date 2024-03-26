@@ -1,3 +1,117 @@
 body {
-    background-color: skyblue;
+	background: linear-gradient(-45deg, #000000, #373435, #5e676a, #aab0af);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
 }
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/**ACCUEIL**/
+
+.carousel-item img {
+    max-height: 40vh; /* Adjust this value as needed */
+    object-fit: cover; /* This will help to keep the aspect ratio of the images */
+}
+
+#accueil p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #ffffff;
+    text-align: center;
+}
+
+#accueil h1 {
+    color: #ffffff;
+}
+
+#accueil h2 {
+    font-size: 28px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#accueil h4 {
+    color: #000000;
+}
+
+#accueil ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+#accueil li {
+    margin-bottom: 10px;
+    text-align: center;
+    color: #ffffff;
+}
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Styles pour les champs */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* inclure le padding dans la largeur */
+    font-size: 16px;
+}
+
+textarea {
+    height: 100px;
+}
+
+/* Style pour le bouton */
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
