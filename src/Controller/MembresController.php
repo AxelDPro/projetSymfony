@@ -12,6 +12,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 
+
 class MembresController extends AbstractController
 {
     #[Route('/membres', name: 'app_membresBiens')]
@@ -69,7 +70,7 @@ class MembresController extends AbstractController
     public function deleteBiens(Biens $biens, BiensRepository $biensRepository, Request $request, EntityManagerInterface $manager): Response {
         $manager->remove($biens);
         $manager->flush();
-        $this->addFlash('success','Suppression correctement effectuer !');
+        $this->addFlash('success','Suppression correctement effectuée !');
         return $this->redirectToRoute("app_membresBiens");
     }
 
