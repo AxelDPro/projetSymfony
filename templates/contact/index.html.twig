@@ -3,5 +3,33 @@
 {% block title %}Hello ContactController!{% endblock %}
 
 {% block body %}
-f
+<body>
+<div class="col-12 mt-5" id="formulaire">
+    <div class="row">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Nom</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Votre nom">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Prénom</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Votre prénom">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Adresse email</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Votre adresse email">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Objet</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button type="button" class="btn btn-secondary">Envoyer</button>
+    </div>
+</div>
+
+</body>
+
 {% endblock %}

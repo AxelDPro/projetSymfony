@@ -1,3 +1,73 @@
 body {
-    background-color: skyblue;
+	background-color: rgb(41, 41, 41);
 }
+
+/**ACCUEIL**/
+
+.carousel-item img {
+    max-height: 40vh;
+    object-fit: cover;
+}
+
+#accueil p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #ffffff;
+    text-align: center;
+}
+
+#accueil h1 {
+    color: #ffffff;
+}
+
+#accueil h2 {
+    font-size: 28px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#accueil h4 {
+    color: #000000;
+}
+
+#accueil ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+#accueil li {
+    margin-bottom: 10px;
+    text-align: center;
+    color: #ffffff;
+}
+
+/**CONTACT**/
+#formulaire {
+    width: 50%; 
+    margin: auto; 
+    border-radius: 25px;
+    border: 2px solid #000; 
+    padding: 20px;
+    background-color: rgb(0, 0, 0);
+}
+
+#formulaire label{
+    color: #ffffff;
+    text-align: center;
+}
+
+/**navbar**/
+
+#navbar a{
+    color: #ffffff;
+}
+/* Styles généraux */
+
+    
+
+
+
+

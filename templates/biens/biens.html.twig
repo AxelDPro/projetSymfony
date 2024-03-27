@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BienController{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="mt-5 mb-4">Liste des Biens</h1>
+    <table class="table table-striped   ">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Nombre de pièces</th>
+                <th>Surface</th>
+                <th>Titre</th>
+                <th>Ville (CP)</th>
+                <th>Prix</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for bien in biens %}
+            <tr>
+                <td><img src="{{ asset('images/' ~ bien.image) }}" class="img-fluid" style="max-width: 100px; height: auto;" alt="Image du bien"></td>
+                <td>{{ bien.nbPieces }}</td>
+                <td>{{ bien.surface }} m²</td>
+                <td>{{ bien.titre }}</td>
+                <td>{{ bien.ville }} ({{ bien.cp }})</td>
+                <td>{{ bien.prix }} €</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+</div>
+{% endblock %}

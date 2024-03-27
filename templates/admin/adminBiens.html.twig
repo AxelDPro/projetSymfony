@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+
+<h1>Page d'Administration</h1>
+
+
+</br></br> <a href="{{path('admin_biens_ajouter')}}"> <button type="button" class="btn btn-success">Ajouter</button></br></br><table class="table table-striped"><thead><tr>
+<th>Titre</th>
+<th>Description</th>
+<th>Surface</th>
+<th>Prix</th>
+<th>Nombres de Pièces</th>
+<th>Nombres de Chambres</th>
+<th>Ville</th>
+<th>Adresse</th>
+<th>Code Postale</th>
+<th>Type</th>
+
+<th>Action</th></tr></thead><tbody class="table table-striped">
+
+{% for biens in biens %}
+
+<tr>
+	<td><img src="{{asset('images/biens'~ biens.image ~'')}}" style="width:100px;height:100px;"></td>
+	<td>{{biens.titre}}</td>
+	<td>{{biens.description}}</td>
+	<td>{{biens.surface}}</td>
+	<td>{{biens.prix}}</td>
+	<td>{{biens.nbPieces}}</td>
+	<td>{{biens.nbChambre}}</td>
+    <td>{{biens.etage}}</td>
+	<td>{{biens.ville}}</td>
+	<td>{{biens.adresse}}</td>
+	<td>{{biens.cp}}</td>
+    <td>{{biens.type}}</td>
+
+
+	<td>
+		 <form>
+			<a href="{{path('admin_biens_modification',{'id':biens.id})}}"><button type="button" class="btn btn-primary">Modifier</button>
+			</a>
+		 </form>   
+	</td>
+
+	<td>
+		  <form>
+			<a href="{{path('admin_biens_delete',{'id':biens.id})}}">
+			<button type="button" class="btn btn-primary">Supprimer</button>
+			</a>
+		 </form>   
+	</td>
+
+</tr></tr</tbody>{% endfor %}</tbody></table>
+
+{% endblock %}
