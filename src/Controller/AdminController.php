@@ -8,8 +8,8 @@ use Symfony\Component\Routing\Attribute\Route;
 use App\Repository\BiensRepository;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
-use App\Form\BiensType;
 use Symfony\Component\HttpFoundation\Request;
+use App\Form\BiensType;
 use App\Entity\Biens;
 use Doctrine\DBAL\Platforms\MariaDb1060Platform;
 
