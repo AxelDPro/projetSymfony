@@ -54,7 +54,7 @@ class BiensFixtures extends Fixture
         $bien3 = new Biens();
         $bien3->setTitre("Maison Classique")
             ->setDescription("Maison ")
-            ->setSurface(300)
+            ->setSurface(600)
             ->setPrix(300000)
             ->setNbPieces(7)
             ->setNbChambre(3)
@@ -73,14 +73,14 @@ class BiensFixtures extends Fixture
 
 
         $bien4 = new Biens();
-        $bien4->setTitre("Maison Des Sept Cieux")
-            ->setDescription("PentHouse avec Vue de MALADE")
-            ->setSurface(300)
+        $bien4->setTitre("OYAM House")
+            ->setDescription("Appartement Chic")
+            ->setSurface(400)
             ->setPrix(300000)
             ->setNbPieces(7)
             ->setNbChambre(3)
             ->setEtage(2)
-            ->setVille("Marseille")
+            ->setVille("Pau")
             ->setAdresse("1 Rue Salvador Allende")
             ->setType("PentHouse")
             ->setCp("33000")

@@ -6,10 +6,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use App\Repository\BiensRepository;
-use App\Form\BiensType;
 use App\Entity\Biens;
-use Symfony\Component\HttpFoundation\Request;
+use App\Form\BiensType;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
+
 
 
 class MembresController extends AbstractController

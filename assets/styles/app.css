@@ -67,6 +67,19 @@ body {
 /* Styles généraux */
 
     
+/* Style pour le bouton "Détails" */
+.details-btn {
+    background-color: #007bff; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    border: none; /* Suppression de la bordure */
+    padding: 8px 16px; /* Espacement intérieur */
+    cursor: pointer; /* Curseur de souris */
+    border-radius: 4px; /* Arrondi des coins */
+}
+
+.details-btn:hover {
+    background-color: #0056b3; /* Couleur de fond au survol */
+}
 
 
 
