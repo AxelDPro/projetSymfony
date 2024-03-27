@@ -3,41 +3,33 @@
 {% block title %}Hello ContactController!{% endblock %}
 
 {% block body %}
+<body>
+<div class="col-12 mt-5" id="formulaire">
+    <div class="row">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Nom</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Votre nom">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Prénom</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Votre prénom">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Adresse email</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Votre adresse email">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Objet</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button type="button" class="btn btn-secondary">Envoyer</button>
+    </div>
+</div>
 
-
-
-
-<style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            background-image: url('{{ asset('images/contact.jpg') }}'); /* Remplacez 'background.jpg' par le chemin de votre image */
-            background-size: cover;
-            background-position: center;
-        }
-    </style>
 </body>
-
-
-<form action="#" method="post">
-    <label for="nom">Nom contact :</label><br>
-    <input type="text" id="nom" name="nom"><br><br>
-    
-    <label for="prenom">Prénom contact :</label><br>
-    <input type="text" id="prenom" name="prenom"><br><br>
-    
-    <label for="email">Email :</label><br>
-    <input type="email" id="email" name="email"><br><br>
-    
-    <label for="sujet">Sujet :</label><br>
-    <input type="text" id="sujet" name="sujet"><br><br>
-    
-    <label for="message">Message :</label><br>
-    <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
-    
-    <input type="submit" value="Envoyer">
-</form>
-
 
 {% endblock %}
