@@ -5,6 +5,12 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use App\Repository\BiensRepository;
+use App\Form\BiensType;
+use App\Entity\Biens;
+use Symfony\Component\HttpFoundation\Request;
+use Doctrine\ORM\EntityManagerInterface;
+
 
 class MembresController extends AbstractController
 {
@@ -63,7 +69,7 @@ class MembresController extends AbstractController
     public function deleteBiens(Biens $biens, BiensRepository $biensRepository, Request $request, EntityManagerInterface $manager): Response {
         $manager->remove($biens);
         $manager->flush();
-        $this->addFlash('success','Suppression correctement effectuer !');
+        $this->addFlash('success','Suppression correctement effectuée !');
         return $this->redirectToRoute("app_membresBiens");
     }
 
