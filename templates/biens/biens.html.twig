@@ -14,6 +14,7 @@
                 <th>Titre</th>
                 <th>Ville (CP)</th>
                 <th>Prix</th>
+                <th>Détails</th>
             </tr>
         </thead>
         <tbody>
@@ -25,10 +26,53 @@
                 <td>{{ bien.titre }}</td>
                 <td>{{ bien.ville }} ({{ bien.cp }})</td>
                 <td>{{ bien.prix }} €</td>
+                <td><button class="details-btn" data-titre="{{ bien.titre }}" data-description="{{ bien.description }}" data-surface="{{ bien.surface }}" data-prix="{{ bien.prix }}" data-nb-pieces="{{ bien.nbPieces }}" data-nb-chambre="{{ bien.nbChambre }}" data-etage="{{ bien.etage }}" data-ville="{{ bien.ville }}" data-adresse="{{ bien.adresse }}" data-type="{{ bien.type }}" data-cp="{{ bien.cp }}">Détails</button></td>
             </tr>
+
+            
             {% endfor %}
+            
         </tbody>
     </table>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttons = document.querySelectorAll('.details-btn');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const titre = this.getAttribute('data-titre');
+                    const description = this.getAttribute('data-description');
+                    const surface = this.getAttribute('data-surface');
+                    const prix = this.getAttribute('data-prix');
+                    const nbPieces = this.getAttribute('data-nb-pieces');
+                    const nbChambre = this.getAttribute('data-nb-chambre');
+                    const etage = this.getAttribute('data-etage');
+                    const ville = this.getAttribute('data-ville');
+                    const adresse = this.getAttribute('data-adresse');
+                    const type = this.getAttribute('data-type');
+                    const cp = this.getAttribute('data-cp');
+
+                    // Construction du texte pour l'alerte
+                    const alertText = `
+                        Titre: ${titre}\n
+                        Description: ${description}\n
+                        Surface: ${surface} m²\n
+                        Prix: ${prix} €\n
+                        Nombre de pièces: ${nbPieces}\n
+                        Nombre de chambres: ${nbChambre}\n
+                        Étage: ${etage}\n
+                        Ville: ${ville} (${cp})\n
+                        Adresse: ${adresse}\n
+                        Type: ${type}
+                    `;
+
+                    // Affichage des informations dans une alerte
+                    alert(alertText);
+                    
+                });
+            });
+        });
+    </script>
 
 </div>
 </div>
