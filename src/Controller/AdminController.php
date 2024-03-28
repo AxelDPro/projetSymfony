@@ -36,7 +36,7 @@ class AdminController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
             $manager->persist($biens);
             $manager->flush();
-            return $this->redirectToRoute("app_adminBiens");
+            return $this->redirectToRoute("app_admin");
         }
  
         return $this->render('admin/modificationBiens.html.twig', [ 
@@ -57,7 +57,7 @@ class AdminController extends AbstractController
             $manager->persist($biens);
             $manager->flush();
             
-            return $this->redirectToRoute('app_adminBiens');
+            return $this->redirectToRoute('app_admin');
         }
         return $this->render('admin/ajouterBiens.html.twig', [ 
             'biens'=> $biens,
@@ -70,6 +70,6 @@ class AdminController extends AbstractController
         $manager->remove($biens);
         $manager->flush();
         $this->addFlash('success','Suppression correctement effectuer !');
-        return $this->redirectToRoute("app_adminBiens");
+        return $this->redirectToRoute("app_admin");
     }
 }
