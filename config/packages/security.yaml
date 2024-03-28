@@ -19,9 +19,9 @@ security:
             provider: app_user_provider
             custom_authenticator: App\Security\LoginFormAutentificatorAuthenticator
             logout:
-                path: app_logout
-                # where to redirect after logout
-                # target: app_any_route
+                path:   /logout
+                target: /
+                invalidate_session: true
 
             remember_me:
                 secret: '%kernel.secret%'
