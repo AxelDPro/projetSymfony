@@ -66,7 +66,12 @@ body {
 }
 /* Styles généraux */
 
-    
+
+/**Style Biens**/
+
+#biens h1{
+    color: #fff;
+}
 /* Style pour le bouton "Détails" */
 .details-btn {
     background-color: #007bff; /* Couleur de fond */
@@ -85,6 +90,7 @@ body {
     background-color: orange;
     color: white;
 }
+
 
 
 
