@@ -12,13 +12,15 @@
 <h1>Page d'Administration</h1>
 
 
-</br></br> <a href="{{path('admin_biens_ajouter')}}"> <button type="button" class="btn btn-success">Ajouter</button></br></br><table class="table table-striped"><thead><tr>
+</br></br> <a href="{{path('admin_biens_ajouter')}}"> <button type="button" class="btn btn-success">Ajouter</button></br></br></a><table class="table table-striped"><thead><tr></a>
+<th>Images</th>
 <th>Titre</th>
 <th>Description</th>
 <th>Surface</th>
 <th>Prix</th>
 <th>Nombres de Pièces</th>
 <th>Nombres de Chambres</th>
+<th>Étages</th>
 <th>Ville</th>
 <th>Adresse</th>
 <th>Code Postale</th>
@@ -29,10 +31,10 @@
 {% for biens in biens %}
 
 <tr>
-	<td><img src="{{asset('images/biens'~ biens.image ~'')}}" style="width:100px;height:100px;"></td>
+	<td><img src="{{asset('images/'~ biens.image ~'')}}" style="width:100px;height:100px;"></td>
 	<td>{{biens.titre}}</td>
 	<td>{{biens.description}}</td>
-	<td>{{biens.surface}}</td>
+	<td>{{biens.surface}}m²</td>
 	<td>{{biens.prix}}</td>
 	<td>{{biens.nbPieces}}</td>
 	<td>{{biens.nbChambre}}</td>
@@ -58,6 +60,6 @@
 		 </form>   
 	</td>
 
-</tr></tr</tbody>{% endfor %}</tbody></table>
+</tr></tr>{% endfor %}</tbody></table>
 
 {% endblock %}
