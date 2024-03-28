@@ -2,15 +2,81 @@
 
 {% block title %}Page d'Administration{% endblock %}
 
-
 {% block body %}
 
-<h2> Modification </h2> {{biens.id}}
+<h2>Modification</h2>
+{{ biens.id }}
 
-{{form_start(form)}}
-{{form_widget(form)}} 
-<a href="{{path('admin_biens_modification',{'id':biens.id})}}"><button  type='submit' class="btn btn-primary">Enregistrer</button>
-{{form_end(form)}}
-<td><img src="{{asset('images/'~ biens.image ~'')}}" style="width:100px;height:100px;"></td>
+{{ form_start(form) }}
+
+<div class="row mb-3">
+    <div class="col">
+        {{ form_row(form.titre, {'label': 'Titre', 'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col">
+        {{ form_row(form.description, {'label': 'Description', 'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col">
+        {{ form_row(form.surface, {'label': 'Surface', 'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col">
+        {{ form_row(form.prix, {'label': 'Prix', 'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col">
+        {{ form_row(form.nbPieces, {'label': 'Nombre de pièces', 'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col">
+        {{ form_row(form.nbChambre, {'label': 'Nombre de chambres', 'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col">
+        {{ form_row(form.etage, {'label': 'Nombre d\'étages', 'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col">
+        {{ form_row(form.ville, {'label': 'Ville', 'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col">
+        {{ form_row(form.adresse, {'label': 'Adresse', 'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col">
+        {{ form_row(form.cp, {'label': 'Code Postal', 'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col">
+        {{ form_row(form.type, {'label': 'Type', 'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+
+<a href="{{ path('admin_biens_modification', {'id': biens.id}) }}" class="btn btn-primary">Enregistrer</a>
+
+{{ form_end(form) }}
 
 {% endblock %}

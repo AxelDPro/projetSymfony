@@ -81,6 +81,11 @@ body {
     background-color: #0056b3; /* Couleur de fond au survol */
 }
 
+.btn-custom {
+    background-color: orange;
+    color: white;
+}
+
 
 
 
