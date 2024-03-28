@@ -5,13 +5,13 @@
 
 {% block body %}
 
-<h2> Ajouter </h2> {{produit.id}}
+<h2> Ajouter </h2> {{biens.id}}
 {{ form_start(form) }}
 {{ form_row(form.titre) }}
 {{ form_row(form.description) }}
 {{ form_row(form.surface) }}
 {{ form_row(form.prix) }}
-{{ form_row(form.nb_pieces) }}
+{{ form_row(form.nbPieces) }}
 {{ form_row(form.nbChambre) }}
 {{ form_row(form.etage) }}
 {{ form_row(form.ville) }}
