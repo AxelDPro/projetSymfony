@@ -54,6 +54,8 @@ class AdminController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $type = $form->get('type')->getData();
+            $biens->setType($type);
             $manager->persist($biens);
             $manager->flush();
             
@@ -64,6 +66,8 @@ class AdminController extends AbstractController
             'form' => $form->createView()
         ]);
     }
+
+
 
     #[Route('/adminDelete/{id}', name: 'admin_biens_delete')]
     public function deleteBiens(Biens $biens, BiensRepository $biensRepository, Request $request, EntityManagerInterface $manager): Response {

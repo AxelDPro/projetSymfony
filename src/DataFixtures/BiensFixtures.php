@@ -91,6 +91,86 @@ class BiensFixtures extends Fixture
 
         $manager->flush();
 
+        $bien4 = new Biens();
+        $bien4->setTitre("Print House")
+            ->setDescription("PentHouse Chic")
+            ->setSurface(400)
+            ->setPrix(300000)
+            ->setNbPieces(7)
+            ->setNbChambre(3)
+            ->setEtage(2)
+            ->setVille("Pau")
+            ->setAdresse("1 Rue Salvador Allende")
+            ->setType("PentHouse")
+            ->setCp("33000")
+            ->setImage("67ef9327029d540a008d7418d9b49bd8.jpg");
+
+
+        $manager->persist($bien4);
+
+        $manager->flush();
+
+
+        $bien4 = new Biens();
+        $bien4->setTitre("OYAM House")
+            ->setDescription("Appartement Chic")
+            ->setSurface(400)
+            ->setPrix(300000)
+            ->setNbPieces(7)
+            ->setNbChambre(3)
+            ->setEtage(2)
+            ->setVille("Pau")
+            ->setAdresse("1 Rue Salvador Allende")
+            ->setType("PentHouse")
+            ->setCp("33000")
+            ->setImage("67ef9327029d540a008d7418d9b49bd8.jpg");
+
+
+        $manager->persist($bien4);
+
+        $manager->flush();
+
+
+        $bien4 = new Biens();
+        $bien4->setTitre("OYAM House")
+            ->setDescription("Appartement Chic")
+            ->setSurface(400)
+            ->setPrix(300000)
+            ->setNbPieces(7)
+            ->setNbChambre(3)
+            ->setEtage(2)
+            ->setVille("Pau")
+            ->setAdresse("1 Rue Salvador Allende")
+            ->setType("PentHouse")
+            ->setCp("33000")
+            ->setImage("67ef9327029d540a008d7418d9b49bd8.jpg");
+
+
+        $manager->persist($bien4);
+
+        $manager->flush();
+
+
+        $bien4 = new Biens();
+        $bien4->setTitre("OYAM House")
+            ->setDescription("Appartement Chic")
+            ->setSurface(400)
+            ->setPrix(300000)
+            ->setNbPieces(7)
+            ->setNbChambre(3)
+            ->setEtage(2)
+            ->setVille("Pau")
+            ->setAdresse("1 Rue Salvador Allende")
+            ->setType("PentHouse")
+            ->setCp("33000")
+            ->setImage("67ef9327029d540a008d7418d9b49bd8.jpg");
+
+
+        $manager->persist($bien4);
+
+        $manager->flush();
+
+
 
     }
 }

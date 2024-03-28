@@ -5,19 +5,112 @@
 
 {% block body %}
 
-<h2> Ajouter </h2> {{biens.id}}
-{{ form_start(form) }}
-{{ form_row(form.titre) }}
-{{ form_row(form.description) }}
-{{ form_row(form.surface) }}
-{{ form_row(form.prix) }}
-{{ form_row(form.nbPieces) }}
-{{ form_row(form.nbChambre) }}
-{{ form_row(form.etage) }}
-{{ form_row(form.ville) }}
-{{ form_row(form.adresse) }}
-{{ form_row(form.cp) }}
-{{ form_row(form.type) }}
+{# <body>
+<div class="col-12 mt-5" id="formulaire">
+    <div class="row">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Nom</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Votre nom">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Prénom</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Votre prénom">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Adresse email</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Votre adresse email">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Objet</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button type="button" class="btn btn-secondary">Envoyer</button>
+    </div>
+</div>
+
+</body> #}
+
+
+<div class="col-12 mt-5" id="formulaire">
+    <h2 class="text-white"> Ajouter </h2>
+    {{ biens.id }}
+    <div class="row">
+        <div class="mb-3">
+            {{ form_start(form) }}
+  </br>
+    
+
+<div class="row">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Titre</label>
+            <input type="titre" class="form-control" id="exampleFormControlInput1" placeholder="titre">
+  </div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Description</label>
+ <input type="descrption" class="form-control" id="exampleFormControlInput1" placeholder="description">
+ </div>
+
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Surface</label>
+ <input type="surface" class="form-control" id="exampleFormControlInput1" placeholder="surface">
+ </div>
+
+ <div class="mb-3">
+   <label for="exampleFormControlInput1" class="form-label">Prix</label>
+ <input type="prix" class="form-control" id="exampleFormControlInput1" placeholder="prix">
+ </div>
+
+ <div class="mb-3">
+   <label for="exampleFormControlInput1" class="form-label">Nombres de Pièces</label>
+<input type="nbPieces" class="form-control" id="exampleFormControlInput1" placeholder="nombres de pièces">
+ </div>
+
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Nombres de Chambres</label>
+<input type="nbChambres" class="form-control" id="exampleFormControlInput1" placeholder="nombres de chambre">
+ </div>
+
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Nombres d'Etage</label>
+<input type="etage" class="form-control" id="exampleFormControlInput1" placeholder="nombres d'étages">
+ </div>
+
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Ville</label>
+<input type="ville" class="form-control" id="exampleFormControlInput1" placeholder="ville">
+ </div>
+
+  <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Adresse</label>
+<input type="adresse" class="form-control" id="exampleFormControlInput1" placeholder="adresse">
+ </div>
+
+  <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Code Postale</label>
+<input type="cp" class="form-control" id="exampleFormControlInput1" placeholder="code postale">
+ </div>
+
+<div class="mb-3">
+    <label for="type" class="form-label">Type</label>
+    <select class="form-select" id="type" name="type">
+        <option value="" selected>Sélectionnez un type</option>
+        <option value="Appartement">Appartement</option>
+        <option value="Maison">Maison</option>
+        <option value="Villa">Villa</option>
+        <option value="Villa">PentHouse</option>
+
+       
+    </select>
+</div>
+</body>
+
 <a href="{{path('admin_biens_ajouter',{'id':biens.id})}}"><button  type='submit' class="btn btn-primary">Enregistrer</button>
-{{ form_end(form) }}
+
 {% endblock %}
+
+
+

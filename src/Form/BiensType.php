@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class BiensType extends AbstractType
 {
@@ -22,12 +23,15 @@ class BiensType extends AbstractType
             ->add('ville')
             ->add('adresse')
             ->add('cp')
-            ->add('type')
-            ->add('surface')
-            ->add('image')
-            ->add('createdAt', null, [
-                'widget' => 'single_text',
+            ->add('type', ChoiceType::class, [
+                'choices' => [
+                    'Appartement' => 'Appartement',
+                    'Maison' => 'Maison',
+                    'Villa' => 'Villa',
+                    'PentHouse' => 'PentHouse',
+                ],
             ])
+            ->add('surface')
             ->add('imageFile', FileType::class, ['required' => false]);
 
     }
