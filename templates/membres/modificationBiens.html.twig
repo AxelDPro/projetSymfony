@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page d'Administration{% endblock %}
+
+
+{% block body %}
+
+<h2> Modification </h2> {{biens.id}}
+
+{{form_start(form)}}
+{{form_widget(form)}} 
+<a href="{{path('membres_biens_modification',{'id':biens.id})}}"><button  type='submit' class="btn btn-primary">Enregistrer</button>
+{{form_end(form)}}
+<td><img src="{{asset('images/'~ biens.image ~'')}}" style="width:100px;height:100px;"></td>
+
+{% endblock %}
