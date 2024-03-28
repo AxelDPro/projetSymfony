@@ -49,9 +49,9 @@ class LoginFormAutentificatorAuthenticator extends AbstractLoginFormAuthenticato
         }
 
         // For example:
-        return new RedirectResponse($this->urlGenerator->generate('biens'));
-        throw new \Exception('admin/adminBiens.html.twig');
-    }
+        return new RedirectResponse($this->urlGenerator->generate('accueil'));
+/*         throw new \Exception('admin/adminBiens.html.twig');
+ */    }
 
     protected function getLoginUrl(Request $request): string
     {
