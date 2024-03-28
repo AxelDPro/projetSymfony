@@ -53,7 +53,7 @@ class LoginFormAutentificatorAuthenticator extends AbstractLoginFormAuthenticato
 /*         throw new \Exception('admin/adminBiens.html.twig');
  */    }
 
-    protected function getLoginUrl(Request $request): string
+    protected function getLoginUrl(Request $request): string 
     {
         return $this->urlGenerator->generate(self::LOGIN_ROUTE);
     }
