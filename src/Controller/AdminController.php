@@ -58,7 +58,6 @@ class AdminController extends AbstractController
             $biens->setType($type);
             $manager->persist($biens);
             $manager->flush();
-            
             return $this->redirectToRoute('app_admin');
         }
         return $this->render('admin/ajouterBiens.html.twig', [ 
@@ -66,7 +65,6 @@ class AdminController extends AbstractController
             'form' => $form->createView()
         ]);
     }
-
 
 
     #[Route('/adminDelete/{id}', name: 'admin_biens_delete')]

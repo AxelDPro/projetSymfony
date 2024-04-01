@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Biens{% endblock %}
+
+{% block body %}
+    <h1>Biens</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ bien.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ bien.titre }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ bien.description }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ bien.prix }}</td>
+            </tr>
+            <tr>
+                <th>NbPieces</th>
+                <td>{{ bien.nbPieces }}</td>
+            </tr>
+            <tr>
+                <th>NbChambre</th>
+                <td>{{ bien.nbChambre }}</td>
+            </tr>
+            <tr>
+                <th>Etage</th>
+                <td>{{ bien.etage }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ bien.ville }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ bien.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Cp</th>
+                <td>{{ bien.cp }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ bien.type }}</td>
+            </tr>
+            <tr>
+                <th>Surface</th>
+                <td>{{ bien.surface }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ bien.image }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ bien.createdAt ? bien.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_test_biens_index') }}">back to list</a>
+
+    <a href="{{ path('app_test_biens_edit', {'id': bien.id}) }}">edit</a>
+
+    {{ include('test_biens/_delete_form.html.twig') }}
+{% endblock %}
