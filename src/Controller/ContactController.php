@@ -22,29 +22,31 @@ class ContactController extends AbstractController
         $form=$this->createForm(ContactType::class,$contact);
         $form->handleRequest($request);
 
+        $message = ''; // Initialiser la variable message
+
         if($form->isSubmitted() && $form->isValid()){
             $manager->persist($contact);
             $manager->flush();
 
+            // Envoyer un email
             $email = (new Email())
             ->from('hello@example.com')
             ->to('you@example.com')
-            //->cc('cc@example.com')
-            //->bcc('bcc@example.com')
-            //->replyTo('fabien@example.com')
-            //->priority(Email::PRIORITY_HIGH)
-            ->subject('Time for Symfony Mailer!')
-            ->text('Sending emails is fun again!')
-            ->html('<p>See Twig integration for better HTML integration!</p>');
+            ->subject('Nouveau contact enregistré')
+            ->text('Un nouveau contact a été enregistré.');
 
-        $mailer->send($email);
+            $mailer->send($email);
 
+            // Définir le message de confirmation
+            $message = 'Le contact a été enregistré avec succès !';
 
             return $this->redirectToRoute("app_contact");
         }
+
         return $this->render('contact/index.html.twig', [
             'contact'=>$contact,
-            'form'=>$form->createView()
+            'form'=>$form->createView(),
+            'message' => $message // Passer le message à la vue
         ]);
     }
 }
