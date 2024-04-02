@@ -37,78 +37,66 @@
 
 <div class="col-12 mt-5" id="formulaire">
     <h2 class="text-white"> Ajouter </h2>
-    {{ biens.id }}
+    {{ form_start(form, {'attr': {'enctype': 'multipart/form-data'}}) }}
     <div class="row">
-        <div class="mb-3">
-            {{ form_start(form) }}
-  </br>
-    
-
-<div class="row">
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Titre</label>
-            <input type="titre" class="form-control" id="exampleFormControlInput1" placeholder="titre">
-  </div>
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Description</label>
- <input type="descrption" class="form-control" id="exampleFormControlInput1" placeholder="description">
- </div>
-
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Surface</label>
- <input type="surface" class="form-control" id="exampleFormControlInput1" placeholder="surface">
- </div>
-
- <div class="mb-3">
-   <label for="exampleFormControlInput1" class="form-label">Prix</label>
- <input type="prix" class="form-control" id="exampleFormControlInput1" placeholder="prix">
- </div>
-
- <div class="mb-3">
-   <label for="exampleFormControlInput1" class="form-label">Nombres de Pièces</label>
-<input type="nbPieces" class="form-control" id="exampleFormControlInput1" placeholder="nombres de pièces">
- </div>
-
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Nombres de Chambres</label>
-<input type="nbChambres" class="form-control" id="exampleFormControlInput1" placeholder="nombres de chambre">
- </div>
-
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Nombres d'Etage</label>
-<input type="etage" class="form-control" id="exampleFormControlInput1" placeholder="nombres d'étages">
- </div>
-
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Ville</label>
-<input type="ville" class="form-control" id="exampleFormControlInput1" placeholder="ville">
- </div>
-
-  <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Adresse</label>
-<input type="adresse" class="form-control" id="exampleFormControlInput1" placeholder="adresse">
- </div>
-
-  <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Code Postale</label>
-<input type="cp" class="form-control" id="exampleFormControlInput1" placeholder="code postale">
- </div>
-
-<div class="mb-3">
-    <label for="type" class="form-label">Type</label>
-    <select class="form-select" id="type" name="type">
-        <option value="" selected>Sélectionnez un type</option>
-        <option value="Appartement">Appartement</option>
-        <option value="Maison">Maison</option>
-        <option value="Villa">Villa</option>
-        <option value="Villa">PentHouse</option>
-
-       
-    </select>
+        <div class="col-md-6">
+            <div class="mb-3">
+                {{ form_label(form.titre, 'Titre', {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.titre, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(form.description, 'Description', {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(form.surface, 'Surface', {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.surface, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(form.prix, 'Prix', {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.prix, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                {{ form_label(form.nbPieces, 'Nombres de Pièces', {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.nbPieces, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(form.nbChambre, 'Nombres de Chambres', {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.nbChambre, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(form.etage, 'Nombres d\'Etages', {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.etage, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(form.ville, 'Ville', {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.ville, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(form.adresse, 'Adresse', {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.adresse, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(form.cp, 'Code Postale', {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.cp, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(form.type, 'Type', {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.type, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(form.imageFile, 'Image', {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.imageFile, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+    </div>
+    <a href="{{path('admin_biens_ajouter',{'id':biens.id})}}"><button  type='submit' class="btn btn-primary">Enregistrer</button>
+    {{ form_end(form) }}
 </div>
-</body>
 
-<a href="{{path('admin_biens_ajouter',{'id':biens.id})}}"><button  type='submit' class="btn btn-primary">Enregistrer</button>
+
 
 {% endblock %}
 

@@ -16,6 +16,7 @@ class BiensType extends AbstractType
         $builder
             ->add('titre')
             ->add('description')
+            ->add('surface')
             ->add('prix')
             ->add('nbPieces')
             ->add('nbChambre')
@@ -31,7 +32,7 @@ class BiensType extends AbstractType
                     'PentHouse' => 'PentHouse',
                 ],
             ])
-            ->add('surface')
+            
             ->add('imageFile', FileType::class, ['required' => false]);
 
     }
