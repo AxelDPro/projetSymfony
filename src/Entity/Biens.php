@@ -4,7 +4,6 @@ namespace App\Entity;
 
 use App\Repository\BiensRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
@@ -214,7 +213,7 @@ class Biens {
     }
 
     
-    public function getImageFile(): ?string
+    public function getImageFile(): ?file
     {
         return $this->imageFile;
     }
@@ -222,10 +221,12 @@ class Biens {
     public function setImageFile(?File $imageFile = null): self
     {
         $this->imageFile = $imageFile;
-
+        if($imageFile!=null){
+        $this->setCreatedAt(new \DateTimeImmutable());
+        }
         return $this;
+    
     }
-
 
     public function getCreatedAt(): ?\DateTimeImmutable
     {
