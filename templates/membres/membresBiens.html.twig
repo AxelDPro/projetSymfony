@@ -34,7 +34,7 @@
 {% for biens in biens %}
 
 <tr>
-	<td><img src="{{asset('images/'~ biens.image ~'')}}" style="width:100px;height:100px;"></td>
+	<td><img src="{{asset('images/biens/'~ biens.image ~'')}}" style="width:100px;height:100px;"></td>
 	<td>{{biens.titre}}</td>
 	<td>{{biens.description}}</td>
 	<td>{{biens.surface}}m²</td>
