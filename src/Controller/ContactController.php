@@ -22,13 +22,12 @@ class ContactController extends AbstractController
         $form=$this->createForm(ContactType::class,$contact);
         $form->handleRequest($request);
 
-        $message = ''; // Initialiser la variable message
+        
 
         if($form->isSubmitted() && $form->isValid()){
             $manager->persist($contact);
             $manager->flush();
 
-            // Envoyer un email
             $email = (new Email())
             ->from('hello@example.com')
             ->to('you@example.com')
@@ -37,16 +36,12 @@ class ContactController extends AbstractController
 
             $mailer->send($email);
 
-            // Définir le message de confirmation
-            $message = 'Le contact a été enregistré avec succès !';
-
             return $this->redirectToRoute("app_contact");
         }
 
         return $this->render('contact/index.html.twig', [
             'contact'=>$contact,
             'form'=>$form->createView(),
-            'message' => $message // Passer le message à la vue
         ]);
     }
 }
