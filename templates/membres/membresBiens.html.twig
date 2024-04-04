@@ -51,29 +51,17 @@
 
 	<td>
 		 <form>
-			<a href="{{path('membres_biens_modification',{'id':biens.id})}}"><button type="button" class="btn btn-primary">Modifier</button>
+			<a href="{{ path('membres_biens_modification', {'id': biens.id}) }}" class="btn btn-warning">Modifier</a>
 			</a>
 		 </form>   
 	</td>
 
 	<td>
 		  <form>
-			<a href="{{path('membres_biens_delete',{'id':biens.id})}}">
-			<button type="button" class="btn btn-primary">Supprimer</button>
+			<a href="{{ path('membres_biens_delete', {'id': biens.id}) }}" class="btn btn-danger">Supprimer</a>
 			</a>
 		 </form>   
 	</td>
 
 </tr></tr</tbody>{% endfor %}</tbody></table>
-{% if app.user %}
-        <div class="mb-3">
-            Vous êtes connectez en tant que {{ app.user.userIdentifier }}, <a href="{{ path('app_deconnexion') }}">Deconnexion</a>
-        </div>
-
-        {% else %}
-
-        <a href="{{path('app_connexion')}}">Connexion<span class="sr-only">(current)</span> </a>
-    {% endif %}
-
-
 {% endblock %}

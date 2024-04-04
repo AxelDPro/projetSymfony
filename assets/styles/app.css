@@ -1,6 +1,11 @@
 body {
 	background-color: rgb(41, 41, 41);
 }
+h1{
+    color:#ffffff;
+    text-align: center;
+}
+
 
 /**ACCUEIL**/
 
@@ -17,7 +22,7 @@ body {
 }
 
 #accueil h1 {
-    color: #ffffff;
+    color: #ec3c3c;
 }
 
 #accueil h2 {
@@ -28,7 +33,7 @@ body {
 }
 
 #accueil h4 {
-    color: #000000;
+    color: #a0b81d;
 }
 
 #accueil ul {
@@ -49,9 +54,9 @@ body {
     width: 50%; 
     margin: auto; 
     border-radius: 25px;
-    border: 2px solid #000; 
+    border: 2px solid #5b58ee; 
     padding: 20px;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(243, 239, 239);
 }
 
 #formulaire label{

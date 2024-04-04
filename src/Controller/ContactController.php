@@ -29,10 +29,10 @@ class ContactController extends AbstractController
             $manager->flush();
 
             $email = (new Email())
-            ->from('hello@example.com')
-            ->to('you@example.com')
-            ->subject('Nouveau contact enregistré')
-            ->text('Un nouveau contact a été enregistré.');
+            ->from($contact->getMail())
+            ->to('admin@gmail.fr')
+            ->subject($contact->getObjet())
+            ->text($contact->getMessage());
 
             $mailer->send($email);
 

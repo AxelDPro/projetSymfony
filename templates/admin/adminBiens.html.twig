@@ -62,14 +62,6 @@
 	</td>
 
 </tr></tr>{% endfor %}</tbody></table>
-{% if app.user %}
-        <div class="mb-3">
-            Vous êtes connectez en tant que {{ app.user.userIdentifier }}, <a href="{{ path('app_deconnexion') }}"><button type="button" class="btn btn-primary">Deconnexion</button>
-        </div>
-
-        {% else %}
-
-        <a href="{{path('app_connexion')}}">Connexion<span class="sr-only">(current)</span> </a>
-    {% endif %}
+	
 
 {% endblock %}
