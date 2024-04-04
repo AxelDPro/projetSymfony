@@ -5,7 +5,33 @@
 {% block body %}
 
 {{form_start(form)}}
-{{form_widget(form)}}
+
+<div class="row mb-3">
+    <div class="col">
+        {{ form_row(form.nom, {'label': 'Nom', 'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+<div class="row mb-3">
+    <div class="col">
+        {{ form_row(form.prenom, {'label': 'Prénom', 'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+<div class="row mb-3">
+    <div class="col">
+        {{ form_row(form.mail, {'label': 'Mail', 'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+<div class="row mb-3">
+    <div class="col">
+        {{ form_row(form.objet, {'label': 'Objet', 'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+<div class="row mb-3">
+    <div class="col">
+        {{ form_row(form.message, {'label': 'Message', 'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+
 {{form_end(form)}}
 
 {% endblock %}

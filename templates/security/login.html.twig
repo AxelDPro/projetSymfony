@@ -10,7 +10,8 @@
 
     {% if app.user %}
         <div class="mb-3">
-            Vous êtes connectez en tant que {{ app.user.userIdentifier }}, <a href="{{ path('app_deconnexion') }}">Deconnexion</a>
+            Vous êtes connecté(e) en tant que {{ app.user.userIdentifier }}.
+            </br><a href="{{ path('app_deconnexion') }}">Deconnexion</a>
         </div>
 
         {% else %}
@@ -20,7 +21,7 @@
     </span>
 <div class="col-12">
     <div class="row">
-    <h1 class="h3 mb-3 font-weight-normal text-align-center">S'il vous plaît Connectez-vous</h1>
+    <h1 class="h3 mb-3 font-weight-normal text-align-center">Se connecter</h1>
     <label for="inputEmail">Email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
     <label for="inputPassword">Password</label>
