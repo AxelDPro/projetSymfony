@@ -4,23 +4,8 @@
 
 {% block body %}
 
-<label for="{{ form.nom.vars.id }}" style="color: white;">Nom :</label>
-{{ form_row(form.nom) }}
-<label for="{{ form.prenom.vars.id }}" style="color: white;">Prénom :</label>
-{{ form_row(form.prenom) }}
-<label for="{{ form.mail.vars.id }}" style="color: white;">Adresse e-mail :</label>
-{{ form_row(form.mail) }}
-<label for="{{ form.objet.vars.id }}" style="color: white;">Objet :</label>
-{{ form_row(form.objet) }}
-<label for="{{ form.message.vars.id }}" style="color: white;">Message :</label>
-{{ form_row(form.message) }}
-{{ form_widget(form) }}
-<a href="{{ path('app_contact', {'id': contact.prenom}) }}">
-    <button type='submit' class="btn btn-primary">Enregistrer</button>
-</a>
-{% if message %}
-    <div class="alert alert-success">{{ message }}</div>
-{% endif %}
-{{ form_end(form) }}
+{{form_start(form)}}
+{{form_widget(form)}}
+{{form_end(form)}}
 
 {% endblock %}

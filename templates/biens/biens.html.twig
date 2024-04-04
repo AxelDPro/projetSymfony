@@ -9,7 +9,7 @@
     {% for bien in biens %}
     <div class="col-md-4">
         <div class="card mb-4">
-            <img class="card-img-top" src="{{ asset('images/' ~ bien.image) }}" alt="Image du bien">
+            <img class="card-img-top" src="{{ asset('images/biens/' ~ bien.image) }}" alt="Image du bien">
             <div class="card-body">
                 <h3 class="card-title text-center">{{ bien.titre }}</h3>
                 <p class="card-text text-center fs-5">
