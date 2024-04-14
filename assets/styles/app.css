@@ -1,6 +1,42 @@
 body {
-	background-color: rgb(41, 41, 41);
-}
+    /* Ajoutez l'URL de votre image ici */
+    background: url('https://img.pikbest.com/wp/202345/villa-garden-a-majestic-contemporary-in-dark-wood-boasting-stunning-and-pool-3d-render_9615403.jpg!sw800') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  
+    /* Créer un effet de fondu */
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari et Chrome */
+    -o-animation: fadein 2s; /* Opera */
+  }
+  
+  /* Animation de fondu */
+  @keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+  }
+  
+  /* Firefox */
+  @-moz-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+  }
+  
+  /* Safari et Chrome */
+  @-webkit-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+  }
+  
+  /* Opera */
+  @-o-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+  }
+  
 h1{
     color:#ffffff;
     text-align: center;
@@ -14,6 +50,7 @@ h1{
     object-fit: cover;
 }
 
+
 #accueil p {
     font-size: 18px;
     line-height: 1.5;
@@ -22,7 +59,7 @@ h1{
 }
 
 #accueil h1 {
-    color: #ec3c3c;
+    color: #ffffff;
 }
 
 #accueil h2 {
@@ -54,12 +91,17 @@ h1{
     width: 50%; 
     margin: auto; 
     border-radius: 25px;
-    border: 2px solid #5b58ee; 
+    border: 2px solid #ffffff; 
     padding: 20px;
-    background-color: rgb(243, 239, 239);
+    background-color: rgb(0, 0, 0);
 }
 
 #formulaire label{
+    color: #ffffff;
+    text-align: center;
+}
+
+#formulaire h1,h3{
     color: #ffffff;
     text-align: center;
 }

@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MembresController!{% endblock %}
-
+{% block title %}Page Membre{% endblock %}
 
 {% block body %}
 <style>
@@ -9,12 +8,11 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
+<div class="row">
+<h1>Page Membre</h1>
 
-<h1>Page des Membres</h1>
+<table class="table table-striped"><thead><tr>
 
-
-
-</br></br> <a href="{{path('membres_biens_ajouter')}}"> <button type="button" class="btn btn-success">Ajouter</button></br></br></a><table class="table table-striped"><thead><tr></a>
 <th>Images</th>
 <th>Titre</th>
 <th>Description</th>
@@ -27,13 +25,12 @@
 <th>Adresse</th>
 <th>Code Postale</th>
 <th>Type</th>
-<th>Détails</th>
 
 <th>Action</th></tr></thead><tbody class="table table-striped">
 
 {% for biens in biens %}
 
-<tr>
+<tr class="table-dark">
 	<td><img src="{{asset('images/biens/'~ biens.image ~'')}}" style="width:100px;height:100px;"></td>
 	<td>{{biens.titre}}</td>
 	<td>{{biens.description}}</td>
@@ -46,22 +43,22 @@
 	<td>{{biens.adresse}}</td>
 	<td>{{biens.cp}}</td>
     <td>{{biens.type}}</td>
-	
-	
 
-	<td>
+
+	<td class="table-dark">
 		 <form>
-			<a href="{{ path('membres_biens_modification', {'id': biens.id}) }}" class="btn btn-warning">Modifier</a>
+			<a href="{{ path('admin_biens_modification', {'id': biens.id}) }}" class="btn btn-warning">Modifier</a>
 			</a>
 		 </form>   
-	</td>
-
-	<td>
 		  <form>
-			<a href="{{ path('membres_biens_delete', {'id': biens.id}) }}" class="btn btn-danger">Supprimer</a>
+			<a href="{{ path('admin_biens_delete', {'id': biens.id}) }}" class="btn btn-danger">Supprimer</a>
 			</a>
 		 </form>   
 	</td>
 
-</tr></tr</tbody>{% endfor %}</tbody></table>
+</tr></tr>{% endfor %}</tbody></table>
+	<center> <a href="{{path('admin_biens_ajouter')}}"> <button type="button" class="btn btn-success">Ajouter</button></br></br></a><table class="table table-striped"><thead><tr>
+</center>
+</div>
+
 {% endblock %}

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminController!{% endblock %}
+{% block title %}Page Admin{% endblock %}
 
 {% block body %}
 <style>
@@ -8,10 +8,10 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-
+<div class="row">
 <h1>Page d'Administration</h1>
 
-</br></br> <a href="{{path('admin_biens_ajouter')}}"> <button type="button" class="btn btn-success">Ajouter</button></br></br></a><table class="table table-striped"><thead><tr>
+<table class="table table-striped"><thead><tr>
 
 <th>Images</th>
 <th>Titre</th>
@@ -30,7 +30,7 @@
 
 {% for biens in biens %}
 
-<tr>
+<tr class="table-dark">
 	<td><img src="{{asset('images/biens/'~ biens.image ~'')}}" style="width:100px;height:100px;"></td>
 	<td>{{biens.titre}}</td>
 	<td>{{biens.description}}</td>
@@ -45,23 +45,20 @@
     <td>{{biens.type}}</td>
 
 
-	<td>
+	<td class="table-dark">
 		 <form>
 			<a href="{{ path('admin_biens_modification', {'id': biens.id}) }}" class="btn btn-warning">Modifier</a>
 			</a>
 		 </form>   
-	</td>
-
-	<td>
 		  <form>
-			{# <a href="{{path('admin_biens_delete',{'id':biens.id})}}">
-			<button type="button" class="btn btn-primary">Supprimer</button> #}
 			<a href="{{ path('admin_biens_delete', {'id': biens.id}) }}" class="btn btn-danger">Supprimer</a>
 			</a>
 		 </form>   
 	</td>
 
 </tr></tr>{% endfor %}</tbody></table>
-	
+	<center> <a href="{{path('admin_biens_ajouter')}}"> <button type="button" class="btn btn-success">Ajouter</button></br></br></a><table class="table table-striped"><thead><tr>
+</center>
+</div>
 
 {% endblock %}

@@ -35,8 +35,8 @@
 </body> #}
 
 
-<div class="col-12 mt-5" id="formulaire">
-    <h2 class="text-white"> Ajouter </h2>
+<div class="col-12 mt-5 " id="formulaire">
+    <h2 class="text-white text-align-center"> Ajouter un bien </h2>
     {{ form_start(form, {'attr': {'enctype': 'multipart/form-data'}}) }}
     <div class="row">
         <div class="col-md-6">
@@ -55,6 +55,14 @@
             <div class="mb-3">
                 {{ form_label(form.prix, 'Prix', {'label_attr': {'class': 'form-label'}}) }}
                 {{ form_widget(form.prix, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(form.type, 'Type', {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.type, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(form.imageFile, 'Image', {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.imageFile, {'attr': {'class': 'form-control'}}) }}
             </div>
         </div>
         <div class="col-md-6">
@@ -82,21 +90,12 @@
                 {{ form_label(form.cp, 'Code Postale', {'label_attr': {'class': 'form-label'}}) }}
                 {{ form_widget(form.cp, {'attr': {'class': 'form-control'}}) }}
             </div>
-            <div class="mb-3">
-                {{ form_label(form.type, 'Type', {'label_attr': {'class': 'form-label'}}) }}
-                {{ form_widget(form.type, {'attr': {'class': 'form-control'}}) }}
-            </div>
-            <div class="mb-3">
-                {{ form_label(form.imageFile, 'Image', {'label_attr': {'class': 'form-label'}}) }}
-                {{ form_widget(form.imageFile, {'attr': {'class': 'form-control'}}) }}
-            </div>
         </div>
     </div>
-    <a href="{{path('admin_biens_ajouter',{'id':biens.id})}}"><button  type='submit' class="btn btn-primary">Enregistrer</button>
+    <center><a href="{{path('admin_biens_ajouter',{'id':biens.id})}}"><button  type='submit' class="btn btn-lg btn-primary mt-4">Enregistrer</button></center>
     {{ form_end(form) }}
 </div>
 
-<a href="{{path('admin_biens_ajouter',{'id':biens.id})}}"><button  type='submit' class="btn btn-primary">Enregistrer</button>
 
 
 {% endblock %}

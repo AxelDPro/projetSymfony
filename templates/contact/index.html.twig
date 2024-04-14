@@ -5,9 +5,9 @@
 {% block body %}
 
 {{form_start(form)}}
-<<<<<<< HEAD
-
-<div class="row mb-3">
+<div class="col-12" id="formulaire">
+    <div class="row">
+    <div class="row mb-3">
     <div class="col">
         {{ form_row(form.nom, {'label': 'Nom', 'attr': {'class': 'form-control'}}) }}
     </div>
@@ -32,18 +32,9 @@
         {{ form_row(form.message, {'label': 'Message', 'attr': {'class': 'form-control'}}) }}
     </div>
 </div>
+    </div>
 
-=======
-{{form_row(form.nom)}}
-{{form_row(form.prenom)}}
-{{form_row(form.mail)}}
-{{form_row(form.objet)}}
-{{form_row(form.message)}}
-{{form_widget(form)}}
-<a href="{{ path('app_contact', {'id': contact.prenom}) }}">
-    <button type='submit' class="btn btn-primary">Enregistrer</button>
-</a>
->>>>>>> d077b24 (Correction bug ajout bien)
-{{form_end(form)}}
 
+<center>{{form_end(form)}}</center>
+</div>
 {% endblock %}
