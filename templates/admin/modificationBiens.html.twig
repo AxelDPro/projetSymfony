@@ -3,13 +3,13 @@
 {% block title %}Page d'Administration{% endblock %}
 
 {% block body %}
-
-<h2>Modification</h2>
+<div id="formulaire">
+<h1>Modification</h1>
 {{ biens.id }}
 
 {{ form_start(form) }}
 
-<div class="row mb-3">
+<div class="row mb-3" >
     <div class="col">
         {{ form_row(form.titre, {'label': 'Titre', 'attr': {'class': 'form-control'}}) }}
     </div>
@@ -74,9 +74,8 @@
         {{ form_row(form.type, {'label': 'Type', 'attr': {'class': 'form-control'}}) }}
     </div>
 </div>
-
-<a href="{{path('admin_biens_modification',{'id':biens.id})}}"><button  type='submit' class="btn btn-primary">Enregistrer</button>
-
-{{ form_end(form) }}
+<center>{{ form_end(form) }}</center>
+<center><a href="{{path('admin_biens_modification',{'id':biens.id})}}"><button  type='submit' class="btn btn-primary">Enregistrer</button></center>
+</div>
 
 {% endblock %}

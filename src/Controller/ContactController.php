@@ -33,7 +33,9 @@ class ContactController extends AbstractController
             ->to('admin@gmail.fr')
             ->subject($contact->getObjet())
             ->text($contact->getMessage());
-
+            
+            $this->addFlash('success', 'Le formulaire a été soumis avec succès !');
+            
             $mailer->send($email);
 
             return $this->redirectToRoute("app_contact");
