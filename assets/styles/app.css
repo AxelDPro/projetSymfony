@@ -138,6 +138,14 @@ h1{
     color: white;
 }
 
+/* List Bien */
+
+.card-img-top {
+    object-fit: cover; /* Redimensionne l'image pour remplir le conteneur tout en conservant son aspect. Les parties de l'image sont coupées si elles dépassent du conteneur */
+    width: 100%; /* Largeur de l'image est fixée à 100% de la largeur du conteneur parent */
+    height: 200px; /* Hauteur de l'image est fixée à 200px. Vous pouvez ajuster cette valeur en fonction de vos besoins */
+}
+
 
 
 
