@@ -19,7 +19,7 @@ security:
             provider: app_user_provider
             custom_authenticator: App\Security\LoginFormAutentificatorAuthenticator
             logout:
-                path:   /logout
+                path:   /deconnexion
                 target: /
                 invalidate_session: true
 
